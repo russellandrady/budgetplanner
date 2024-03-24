@@ -12,7 +12,7 @@ const ShowTotal: React.FC<BudgetProps> = ({ total }) => {
           className="form-control text-center"
           placeholder="Your total will be shown here"
           aria-describedby="basic-addon1"
-          value={total.toString()}
+          value={total.toString()+"$"}
         />
       </div>
     </div>

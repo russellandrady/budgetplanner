@@ -30,33 +30,34 @@ const BudgetWrapper = () => {
           : Budget
       )
     );
-
   };
   useEffect(() => {
     const newTotal = budgets.reduce((acc, budget) => acc + budget.amount, 0);
     setTotal(newTotal);
   }, [budgets]);
   return (
-    <div className="container mt-5">
-      <div className="row">
-        <div className="col-md-6 offset-md-3">
-          <h2 className="text-center mb-4">Budget Planner</h2>
-          <BudgetForm addBudget={addBudget} />
-          {budgets.map((budget) =>
-            budget.isEditing ? (
-              <EditBudget budget={budget} editBudget={editBudget} />
-            ) : (
-              <Budget
-                budget={budget}
-                editBudget={editBudget}
-                deleteBudget={deleteBudget}
-              />
-            )
-          )}
-          <ShowTotal total={total} />
+    <body className="custom-body">
+      <div className="container mt-5 ">
+        <div className="row">
+          <div className="col-md-6 offset-md-3">
+            <h2 className="text-center mb-4">Budget Planner</h2>
+            <BudgetForm addBudget={addBudget} />
+            {budgets.map((budget) =>
+              budget.isEditing ? (
+                <EditBudget budget={budget} editBudget={editBudget} />
+              ) : (
+                <Budget
+                  budget={budget}
+                  editBudget={editBudget}
+                  deleteBudget={deleteBudget}
+                />
+              )
+            )}
+            <ShowTotal total={total} />
+          </div>
         </div>
       </div>
-    </div>
+    </body>
   );
 };
 
