@@ -20,7 +20,7 @@ const Budget:React.FC<BudgetProps> = ({budget,editBudget, deleteBudget}) => {
         />
         <input
           type="text"
-          value={budget.amount.toString()}
+          value={budget.amount.toString()+"$"}
           className="form-control"
         />
         <button className="btn btn-outline-secondary" id="UpdateTaskBtn" onClick={()=>editBudget(budget.task, budget.amount, budget.id)}>
